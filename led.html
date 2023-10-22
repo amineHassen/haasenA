@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+
+    .interMilan {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 350px;
+        margin-left: 750px;
+        width: 350px;
+        background-color: rgb(64, 68, 66);
+    }
+
+    .led {
+        transition: all 1s;
+    }
+
+    .btn {
+        font-size: 20px;
+        color: rgb(44, 167, 171);
+        background-color: rgb(231, 223, 223);
+        border-radius: 5px;
+        margin: 10px;
+    }
+
+    .btn:hover {
+        background-color: rgb(225, 151, 54);
+        transform: scale();
+    }
+ 
+</style>
+<body>
+    <div class="interMilan">
+        <img class="led" src="led-off.png">
+        <button class="btn" onclick="opcinema()">Click</button>
+    
+    </div>
+    
+
+    <script>
+        let led = document.querySelector(".led");
+        let On = false;
+        let button = document.querySelector(".btn");
+        let a =document.querySelector('.video');
+
+        function opcinema() {
+            if (On) {
+                led.style.transform = "rotate(-1turn)";
+                led.src = "led-off.png";
+                On = false;
+                button.textContent = "on";
+                button.style.backgroundColor='green';
+
+                
+
+            } else {
+                led.style.transform = "rotate(1turn)";
+                led.src = "led-on.png";
+                On = true;
+                button.textContent = "off";
+                button.style.backgroundColor='white';
+            }
+        }
+
+
+
+    </script>
+</body>
